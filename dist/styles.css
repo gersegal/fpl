@@ -1,0 +1,483 @@
+/* Custom CSS for FPL Debrief Landing Page - Cyberpunk Edition */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Cyberpunk color variables */
+:root {
+    --cyber-cyan: #04f5ff;
+    --cyber-pink: #e90052;
+    --cyber-white: #ffffff;
+    --cyber-green: #00ff85;
+    --cyber-purple: #38003c;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation classes */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+/* Hover effects */
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Custom button styles */
+.btn-primary {
+    background: linear-gradient(135deg, var(--cyber-cyan) 0%, #00d4ff 100%);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #00d4ff 0%, var(--cyber-cyan) 100%);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 10px 20px rgba(4, 245, 255, 0.3),
+        0 0 30px rgba(4, 245, 255, 0.2);
+}
+
+/* Form input focus effects */
+.form-input:focus {
+    box-shadow: 0 0 0 3px rgba(4, 245, 255, 0.2);
+    border-color: var(--cyber-cyan);
+}
+
+/* Cyberpunk input styling */
+.cyber-input {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, var(--cyber-cyan), var(--cyber-pink)) border-box;
+    transition: all 0.3s ease;
+}
+
+.cyber-input:focus {
+    border-color: var(--cyber-cyan);
+    box-shadow: 
+        0 0 0 3px rgba(4, 245, 255, 0.2),
+        0 0 20px rgba(4, 245, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Gradient text effect */
+.gradient-text {
+    background: linear-gradient(135deg, var(--cyber-cyan), var(--cyber-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Cyberpunk gradient text */
+.cyber-gradient-text {
+    background: linear-gradient(45deg, var(--cyber-cyan), var(--cyber-pink), var(--cyber-green));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cyber-cyan);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cyber-purple);
+}
+
+/* Cyberpunk glitch effect */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.glitch:hover {
+    animation: glitch 0.3s ease-in-out;
+}
+
+/* Neon glow effects */
+.neon-glow {
+    text-shadow: 
+        0 0 5px currentColor,
+        0 0 10px currentColor,
+        0 0 15px currentColor,
+        0 0 20px currentColor;
+}
+
+.neon-glow-cyan {
+    text-shadow: 
+        0 0 5px var(--cyber-cyan),
+        0 0 10px var(--cyber-cyan),
+        0 0 15px var(--cyber-cyan);
+}
+
+.neon-glow-pink {
+    text-shadow: 
+        0 0 5px var(--cyber-pink),
+        0 0 10px var(--cyber-pink),
+        0 0 15px var(--cyber-pink);
+}
+
+.neon-glow-green {
+    text-shadow: 
+        0 0 5px var(--cyber-green),
+        0 0 10px var(--cyber-green),
+        0 0 15px var(--cyber-green);
+}
+
+/* Mobile menu animations */
+.mobile-menu-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 200ms, transform 200ms;
+}
+
+.mobile-menu-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 200ms, transform 200ms;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+        line-height: 1.6;
+    }
+}
+
+/* Loading animation for buttons */
+.btn-loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Card hover effects */
+.preview-card {
+    transition: all 0.3s ease;
+}
+
+.preview-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Feature icon animations */
+.feature-icon {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Newsletter signup form */
+.newsletter-form {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+}
+
+.newsletter-form:focus-within {
+    border-color: #1e40af;
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+/* Social media icons */
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    color: #1e40af;
+}
+
+/* Navigation active states */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: #1e40af;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero section background pattern */
+.hero-pattern {
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(30, 64, 175, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(217, 119, 6, 0.1) 0%, transparent 50%);
+}
+
+/* Stats counter animation */
+.stat-number {
+    transition: all 0.5s ease;
+}
+
+.stat-number.animate {
+    transform: scale(1.1);
+    color: #1e40af;
+}
+
+/* Testimonial carousel */
+.testimonial-card {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease;
+}
+
+.testimonial-card.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Footer link hover effects */
+.footer-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #1e40af;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover::before {
+    width: 100%;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        color: #000 !important;
+        background: #fff !important;
+    }
+}
+
+/* MailerLite Form Integration Enhancements */
+.ml-form-embedContainer {
+    font-family: inherit !important;
+}
+
+.ml-form-embedContainer input,
+.ml-form-embedContainer textarea,
+.ml-form-embedContainer select {
+    font-family: inherit !important;
+    transition: all 0.3s ease !important;
+}
+
+.ml-form-embedContainer input:focus,
+.ml-form-embedContainer textarea:focus,
+.ml-form-embedContainer select:focus {
+    outline: none !important;
+    border-color: var(--cyber-cyan) !important;
+    box-shadow: 
+        0 0 0 3px rgba(4, 245, 255, 0.2),
+        0 0 20px rgba(4, 245, 255, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Custom loading animation for MailerLite */
+@keyframes cyber-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: cyber-spin 1s linear infinite;
+}
+
+/* Success state enhancements */
+.ml-form-successBody {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.ml-form-successBody .bg-cyber-green {
+    background: var(--cyber-green) !important;
+}
+
+.ml-form-successBody .text-cyber-purple {
+    color: var(--cyber-purple) !important;
+}
+
+/* Form validation styling */
+.ml-error input,
+.ml-error textarea,
+.ml-error select {
+    border-color: var(--cyber-pink) !important;
+    box-shadow: 0 0 0 3px rgba(233, 0, 82, 0.2) !important;
+}
+
+.ml-error .label-description,
+.ml-error .label-description p,
+.ml-error .label-description p a,
+.ml-error label:first-child {
+    color: var(--cyber-pink) !important;
+} 

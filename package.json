@@ -1,0 +1,16 @@
+{
+  "name": "fpl_debrief_site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://gersegal.github.io/fpl",
+  "description": "",
+  "dependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
